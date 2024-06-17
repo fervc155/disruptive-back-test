@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "noUnusedLocals":false,
+    "noImplicitReturns":false,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "paths": {
+      "*": ["*"],
+      "src/*": ["src/*"] 
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "*.ts"
+  ],
+  // "exclude": [
+  //   "node_modules"
+  // ]
+}
