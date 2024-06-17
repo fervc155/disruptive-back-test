@@ -11,7 +11,6 @@ const router = (router:any)=> {
     const userController = new UserController();
 
 
-    console.log(userController)
 	router.get('/users',
         jwtMiddleware,
         permissionMiddleware(['admin']),

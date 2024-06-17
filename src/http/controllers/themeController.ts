@@ -55,21 +55,10 @@ export class ThemeController   {
       const newData = await service.create(req.body, req.user);
       res.status(201).json(newData);
     } catch (error:any) {
-      console.error(error);
       res.status(error.statusCode || 500).json({ error: error.message || 'Hubo un error en el servidor' }); 
     }
   }
 
-  public async update(req: AuthenticatedRequest, res: Response): Promise<void> {
-    try {
-      const { id } = req.params;
-      const updatedData = await service.update(id, req.body, req.user);
-      res.status(200).json(updatedData);
-    } catch (error:any) {
-      console.error(error);
-      res.status(error.statusCode || 500).json({ error: error.message || 'Hubo un error en el servidor' }); 
-    }
-  }
 
   public async delete(req: Request, res: Response): Promise<void> {
     try {

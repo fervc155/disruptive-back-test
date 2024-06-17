@@ -18,8 +18,6 @@ const router = (router:any)=> {
 		themeController.getById
 	);
 
-
-
 	router.post('/themes',
 		jwtMiddleware,
         permissionMiddleware(['admin']),

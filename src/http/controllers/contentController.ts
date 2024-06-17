@@ -73,7 +73,6 @@ export class ContentController   {
       const newData = await service.create(req.body, req.user);    
       res.status(201).json(newData);
     } catch (error:any) {
-      console.error(error);
       removeFileRequest(req);
       res.status(error.statusCode || 500).json({ error: error.message || 'Hubo un error en el servidor' }); 
     }
@@ -85,7 +84,6 @@ export class ContentController   {
       const updatedData = await service.update(id, req.body, req.user);
       res.status(200).json(updatedData);
     } catch (error:any) {
-      console.error(error);
       res.status(error.statusCode || 500).json({ error: error.message || 'Hubo un error en el servidor' }); 
     }
   }
@@ -96,7 +94,6 @@ export class ContentController   {
       await service.delete(id);
       res.status(200).json({ message: 'Datos eliminados correctamente' });
     } catch (error:any) {
-      console.error(error);
       res.status(error.statusCode || 500).json({ error: error.message || 'Hubo un error en el servidor' }); 
     }
   }

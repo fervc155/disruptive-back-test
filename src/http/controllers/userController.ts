@@ -24,7 +24,6 @@ export class UserController   {
       const newData = await service.create(req.body, req.user);
       res.status(201).json(newData);
     } catch (error:any) {
-      console.error(error);
       res.status(error.statusCode || 500).json({ error: error.message || 'Hubo un error en el servidor' }); 
     }
   }

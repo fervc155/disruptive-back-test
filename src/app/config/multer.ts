@@ -4,7 +4,14 @@ import * as path from 'path'
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads/'); 
+
+    if(process.env.NODE_ENV=="prod"){
+
+      cb(null, 'uploads/');  
+    } else {
+
+      cb(null, 'tests/uploads'); 
+    }
   },
   filename: function (req, file, cb) {
     let extension = file.originalname.split('.');
